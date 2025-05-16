@@ -1,12 +1,91 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="tr">
+
 <head>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sağlık ve Fitness İzleyici</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
+    <select onchange="changeLanguage(this.value)">
+        <option value="tr">Türkçe</option>
+        <option value="en">English</option>
+    </select>
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <div class="weather-widget">
+                    <div class="weather-icon"><i class="fas fa-cloud"></i></div>
+                    <div class="weather-info">
+                        <span class="weather-temp">--°C</span>
+                        <span class="weather-city">Yükleniyor...</span>
+                    </div>
+                </div>
+                <a href="#" class="logo">Fit<span>Takip</span></a>
+            </div>
 
-    <h1>This is a heading</h1>
-    <p>This is a paragraph.</p>
+            <ul class="nav-links">
+                <li><a href="#anasayfa" class="active">Anasayfa</a></li>
+                <li><a href="#egzersiz">Egzersiz</a></li>
+                <li><a href="#beslenme">Beslenme</a></li>
+                <li><a href="#saglik">Sağlık</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
 
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="anasayfa">
+            <h1>Sağlık ve Fitness İzleyici</h1>
+            <p>Egzersizlerinizi, beslenmenizi ve sağlık verilerinizi kolayca takip edin.</p>
+        </section>
+
+        <section id="egzersiz">
+            <h2>Egzersiz Takibi</h2>
+            <p>Bugünkü egzersizlerinizi buradan takip edebilirsiniz.</p>
+            <div class="chart-placeholder">[Egzersiz Grafiği Buraya Gelecek]</div>
+        </section>
+
+        <section id="beslenme">
+            <h2>Beslenme Günlüğü</h2>
+            <p>Yediğiniz yemeği yazın, besin değerlerini görün.</p>
+
+            <input type="text" id="food-input" placeholder="Örnek: apple, rice, chicken..." />
+            <button onclick="getNutrition()">Ara</button>
+
+            <div id="nutrition-results">
+                <p>Besin bilgileri burada görünecek.</p>
+            </div>
+        </section>
+
+
+        <section id="saglik">
+            <h2>Sağlık Verileri</h2>
+            <p>Nabız, uyku, su tüketimi gibi sağlık bilgilerinizi görüntüleyin.</p>
+            <div class="chart-placeholder">[Sağlık Verileri Grafiği Buraya Gelecek]</div>
+        </section>
+
+        <section id="iletisim">
+            <h2>İletişim</h2>
+            <p>Herhangi bir sorun veya öneriniz varsa bize ulaşın.</p>
+            <form>
+                <input type="text" placeholder="Adınız" required>
+                <input type="email" placeholder="E-posta" required>
+                <textarea placeholder="Mesajınız" required></textarea>
+                <button type="submit">Gönder</button>
+            </form>
+        </section>
+    </main>
+    <script src="js/main.js"></script>
 </body>
-</html>s
+
+</html>
